@@ -1,14 +1,26 @@
 import 'package:get/get.dart';
 
+import '../modules/auth/bindings/auth_binding.dart';
+import '../modules/auth/views/auth_view.dart';
+import '../modules/board/bindings/board_binding.dart';
+import '../modules/board/views/board_view.dart';
+import '../modules/core/bindings/core_binding.dart';
+import '../modules/core/views/core_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/notification/bindings/notification_binding.dart';
+import '../modules/notification/views/notification_view.dart';
+import '../modules/profile/bindings/profile_binding.dart';
+import '../modules/profile/views/profile_view.dart';
+import '../modules/social/bindings/social_binding.dart';
+import '../modules/social/views/social_view.dart';
+import '../modules/task/bindings/task_binding.dart';
+import '../modules/task/views/task_view.dart';
 
 part 'app_routes.dart';
 
 class AppPages {
-  AppPages._();
-
-  static const INITIAL = Routes.HOME;
+  static const INITIAL = Routes.AUTH;
 
   static final routes = [
     GetPage(
@@ -16,5 +28,42 @@ class AppPages {
       page: () => const HomeView(),
       binding: HomeBinding(),
     ),
+    GetPage(
+      name: _Paths.AUTH,
+      page: () => const AuthView(),
+      binding: AuthBinding(),
+    ),
+    GetPage(
+      name: _Paths.NOTIFICATION,
+      page: () => const NotificationView(),
+      binding: NotificationBinding(),
+    ),
+    GetPage(
+      name: _Paths.CORE,
+      page: () => const CoreView(),
+      binding: CoreBinding(),
+    ),
+    GetPage(
+      name: _Paths.PROFILE,
+      page: () => const ProfileView(),
+      binding: ProfileBinding(),
+    ),
+    GetPage(
+      name: _Paths.SOCIAL,
+      page: () => const SocialView(),
+      binding: SocialBinding(),
+    ),
+    GetPage(
+      name: _Paths.TASK,
+      page: () => const TaskView(),
+      binding: TaskBinding(),
+    ),
+    GetPage(
+      name: _Paths.BOARD,
+      page: () => const BoardView(),
+      binding: BoardBinding(),
+    ),
   ];
+
+  AppPages._();
 }
